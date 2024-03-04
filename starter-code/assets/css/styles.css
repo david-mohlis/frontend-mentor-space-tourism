@@ -7,6 +7,7 @@
 body {
     margin: 0;
     box-sizing: border-box;
+    min-height: 100vh;
 }
 
 .heading-1 {
@@ -26,7 +27,7 @@ body {
 .heading-3 {
     font-size: 56px;
     font-family: "Bellefair", serif;
-    
+    text-transform: uppercase;
 }
 
 .heading-4 {
@@ -36,7 +37,7 @@ body {
 
 .heading-5 {
     font-size: 28px;
-    letter-spacing: 4.75;
+    letter-spacing: 4.75px;
     font-family: "Barlow Condensed", sans-serif;
     color: var(--secondary-grey);
     text-transform: uppercase;
@@ -50,7 +51,7 @@ body {
 
 .subheading-2 {
     font-size: 14px;
-    letter-spacing: 2.35;
+    letter-spacing: 2.35px;
     font-family: "Barlow Condensed", sans-serif;
 }
 
@@ -120,6 +121,10 @@ header {
     padding-right: 18px;
 }
 
+.hamburger-menu {
+    display: none;
+}
+
 .fw-bold {
     font-weight: bold;
 }
@@ -156,4 +161,208 @@ header {
 
 .main-button:hover {
     outline: 88px hsla(231, 77%, 90%, 0.2) solid; 
+}
+
+@media screen and (max-width: 768px) {
+    .heading-5 {
+        font-size: 20px;
+        letter-spacing: 3.38px;
+    }
+
+    .body-text {
+        font-size: 16px;
+        letter-spacing: 0px;
+        line-height: 28px;
+    }
+
+    .rectangle, span.fw-bold {
+        display: none;
+    }
+
+    .home-background {
+        background-image: url("../home/background-home-tablet.jpg");
+    }
+
+    header {
+        margin-left: 39px;
+    }
+
+    .main-logo {
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    .navbar {
+        background-color: rgba(208, 214, 249, 0.05);
+        margin-top: 0px;
+        column-gap: 10px;
+        padding-top: 30.49px;
+        padding-bottom: 30.49px;
+        padding-right: 0px;
+        padding-left: 10px;
+        width: 450px;
+        justify-content: space-evenly;
+    }
+
+    .nav-text {
+        margin-right: 5px;
+        font-size: 14px;
+        letter-spacing: 2.36px;
+    }
+
+    #index-main {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 106px;
+    }
+
+    #index-intro {
+        width: 58vw;
+        text-align: center;
+    }
+
+    .main-button {
+        margin-top: 120px;
+        width: 242px;
+        height: 242px;
+    }
+
+    .heading-3 {
+        font-size: 32px;
+        letter-spacing: 2px;
+        line-height: auto;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    header {
+        margin-top: 33px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    span.fw-bold {
+        display: block;
+        margin-left: 20px;
+        padding-right: 10px;
+    }
+    
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        justify-items: center;
+        width: 100%;
+        max-width: 254px;
+        min-height: 100vh;
+        row-gap: 40px;
+        background-color: transparent;
+        backdrop-filter: blur(35px);
+        position: fixed;
+        right: -254px;
+        top: 0;
+        padding-top: 100px;
+    }
+    
+    .navbar.open {
+        right: 0;
+    }
+
+    .nav-text {
+        align-items: center;
+        font-size: 16px;
+        letter-spacing: 2.7px;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        row-gap: 6px;
+        position: fixed;
+        top: 40px;
+        right: 24px;
+        z-index: 100;
+        transition: row-gap 0.5s;
+    }
+
+    .hamburger-menu.open {
+        top: 45px;
+        row-gap: 0px;
+    }
+
+    .hamburger-rectangle {
+        background-color: var(--secondary-white);
+        height: 3px;
+        width: 24px;
+    }
+
+    .hamburger-menu.open .hamburger-rectangle:nth-child(1) {
+        transform: translateY(50%) rotate(45deg);
+        transition: 0.5s linear;
+    }
+
+    .hamburger-menu.open .hamburger-rectangle:nth-child(2) {
+        display: none;
+        transition: 0.5s linear;
+    }
+
+    .hamburger-menu.open .hamburger-rectangle:nth-child(3) {
+        transform: translateY(-50%) rotate(-45deg);
+        transition: 0.5s linear;
+    }
+
+    .home-background {
+        background-image: url("../home/background-home-mobile.jpg");
+        background-size: cover;
+    }
+
+    .main-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    #index-main {
+        margin-top: 40px;
+    }
+
+    #index-intro {
+        width: 85vw;
+    }
+
+    .heading-1 {
+        font-size: 80px;
+        letter-spacing: 0px;
+        line-height: 100px;
+    }
+
+    .heading-5 {
+        font-size: 16px;
+        letter-spacing: 2.7px;
+        line-height: auto;
+    }
+
+    .body-text {
+        font-size: 15px;
+        line-height: 25px;
+        letter-spacing: 0px;
+    }
+
+    .heading-3 {
+        font-size: 20px;
+        line-height: auto;
+        letter-spacing: 1.25px;
+    }
+
+    .main-button {
+        margin-top: 30px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .active {
+        border-bottom: 0px;
+        padding-bottom: 0px;
+        border-right: 4px var(--secondary-white) solid;
+        height: 31px;
+    }
 }
